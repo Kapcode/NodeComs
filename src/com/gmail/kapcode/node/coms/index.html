@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      #toolbar{
+        border-color:black;
+        border-style: solid;
+        padding: 5px 5px 5px 5px;
+        height: 100px;
+        width: 750px;
+        float: left;
+      }
+
+      #new_button{
+        font-size: 300%;
+        background-color: black;
+        color: white;
+        height: 100%;
+        width: 75px;
+        float: left;
+      }
+
+      .toolbarFeild{
+        margin-left: 5px;
+        width: 200px;
+        height: 90%;
+        float: left;
+        font-size: 200%;
+      }
+
+      #sliderContainerWidth{
+        float: left;
+      }
+      .sliderContainers{
+        margin-left: 5px;
+      }
+      .slider{
+        float: right;
+        height: 30px;
+      }
+      #heightSlider{
+        float: right;
+      }
+      #sliderContainerHeight{
+        float: left;
+      }
+
+      #bank{
+        border-style: solid;
+        padding: 5px 5px 5px 5px;
+        margin-top: 10px;
+        height: 300px;
+        width: 750px;
+        float: left;
+      }
+
+
+
+
+    </style>
+  </head>
+  <body style="background-color:DimGray">
+
+
+
+    <div id="toolbar">
+      <button id="new_button">+</button>
+      <input class="toolbarFeild" id="textFeild" type="text" placeholder="Name:"></input>
+      <input class="toolbarFeild" id="macroFeild" type="text" placeholder="Macro:"></input>
+<div class="sliderContainers">
+      <div id="sliderContainerWidth">
+        W<input id="widthSlider" class="slider" type="range" min="1" max="100" value="50" class="slider" id="myRange"></input>
+      </div>
+      <div id="sliderContainerHeight">
+        H<input id="heightSlider" class="slider" type="range" min="1" max="100" value="50" class="slider" id="myRange"></input>
+      </div>
+</div>
+    </div>
+
+    <p style="overflow-y: auto;" id="bank"></p>
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+    document.getElementById("new_button").onclick = function() {
+      doc = document;
+      width = doc.getElementById("widthSlider").value;
+      height = doc.getElementById("heightSlider").value;
+      name = doc.getElementById("textFeild").value;
+      macro = doc.getElementById("macroFeild").value;
+      newButton = doc.createElement("button");
+      newButton.name = name;
+      newButton.macro = macro;
+      newButton.innerHTML = name;
+      newButton.style.width = width+"px";
+      newButton.style.height = height+"px";
+      newButton.style.float = "left";
+      newButton.style.background = "black";
+      newButton.style.color = "white";
+      newButton.style.fontSize = "110%";
+      newButton.onclick = function() { // Note this is a function
+        alert(macro);
+        alert(name);
+      };
+      bank = doc.getElementById("bank");
+      bank.insertBefore(newButton,bank.children[0]);
+    };
+    </script>
+
+  </body>
+</html>
