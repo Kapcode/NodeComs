@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
     <title></title>
     <style>
@@ -8,8 +8,8 @@
         border-color:black;
         border-style: solid;
         padding: 5px 5px 5px 5px;
-        height: 100px;
-        width: 750px;
+        height: 110px;
+        width: 98%;
         float: left;
       }
 
@@ -18,28 +18,27 @@
         background-color: black;
         color: white;
         height: 100%;
-        width: 75px;
+        width: 10%;
         float: left;
       }
-
       .toolbarFeild{
-        margin-left: 5px;
-        width: 200px;
-        height: 90%;
-        float: left;
         font-size: 200%;
+        width: 30%;
+        line-height: 100px;
+        float: left;
+        margin-right: 10px;
       }
 
-      #sliderContainerWidth{
-        float: left;
-      }
-      .sliderContainers{
-        margin-left: 5px;
-      }
       .slider{
-        float: right;
-        height: 30px;
+        height: 20px;
+        width: 100%
+        margin-right: 10px;
       }
+      #sliderContainers{
+        float: left;
+        width: 25%;
+      }
+
       #heightSlider{
         float: right;
       }
@@ -52,44 +51,44 @@
         padding: 5px 5px 5px 5px;
         margin-top: 10px;
         height: 300px;
-        width: 750px;
+        width: 98%;
         float: left;
+        overflow-y: auto;
+      }
+      .text{
+        color: white;
+        font-weight: bold;
+        font-size: 120%;
       }
 
 
 
 
     </style>
-  </head>
-  <body style="background-color:DimGray">
+</head>
+<body style="background-color:DimGray">
 
 
 
-    <div id="toolbar">
-      <button id="new_button">+</button>
-      <input class="toolbarFeild" id="textFeild" type="text" placeholder="Name:"></input>
-      <input class="toolbarFeild" id="macroFeild" type="text" placeholder="Macro:"></input>
-<div class="sliderContainers">
-      <div id="sliderContainerWidth">
-        W<input id="widthSlider" class="slider" type="range" min="1" max="100" value="50" class="slider" id="myRange"></input>
-      </div>
-      <div id="sliderContainerHeight">
-        H<input id="heightSlider" class="slider" type="range" min="1" max="100" value="50" class="slider" id="myRange"></input>
-      </div>
-</div>
+<div id="toolbar">
+    <button id="new_button">+</button>
+    <input class="toolbarFeild" id="textFeild" type="text" placeholder="Name:"></input>
+    <input class="toolbarFeild" id="macroFeild" type="text" placeholder="Macro:"></input>
+    <div id="sliderContainers">
+        <div id="sliderContainerWidth">
+            <div class="text">Width</div><input id="widthSlider" class="slider" type="range" min="1" max="100" value="50" class="slider"></input>
+        </div>
+        <div id="sliderContainerHeight">
+            <div class="text">Height</div><input id="heightSlider" class="slider" type="range" min="1" max="100" value="50" class="slider"></input>
+        </div>
     </div>
-
-    <p style="overflow-y: auto;" id="bank"></p>
-
-
+</div>
+<p id="bank"></p>
 
 
 
 
-
-
-
-    <script type="text/javascript">
+<script type="text/javascript">
     document.getElementById("new_button").onclick = function() {
       doc = document;
       width = doc.getElementById("widthSlider").value;
@@ -115,5 +114,5 @@
     };
     </script>
 
-  </body>
+</body>
 </html>
